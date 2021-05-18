@@ -3,9 +3,13 @@
 
 <p> Clothing id = {{ clothing[0] }}</p>
 <p> Clothing name = {{ clothing[1] }} </p>
-cursor = conn.cursor()
-cursor.execute
+<p> Price = {{ clothing [3] }} </p>
+<p> Describtion = {{ clothing [4] }} </p>
 
-<p> Clothing brand = {{  }}
+{% for item in brand %}
+  <p> {{ item[0] }} </p> 
+{% endfor %}
+
+
 
 {% endblock %}
