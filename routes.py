@@ -10,18 +10,30 @@ def home ():
   return render_template('home.html', title="home")
 
 
-@app.route ('/clothing/<int:id>')
-def clothing (id):
-  conn = sqlite3.connect("clothing.db")
-  cursor = conn.cursor()
-  cursor.execute("SELECT * FROM Clothes WHERE id=?;", (id,))
-  clothing = cursor.fetchone()
-  cursor.execute("SELECT name FROM Brands WHERE id IN (SELECT brandid FROM ClothesBrand WHERE clothesid = (SELECT id FROM Clothes WHERE name = ?))", (clothing[1],))
-  brand = cursor.fetchall() 
+def do_query (query):
+  conn = sqlite3.connect("clothing2.db")
+  cur = conn.cursor()
+  cur.execute(query)
+  results = cur.fetchall()
   conn.close()
-  print(clothing)
-  return render_template('clothing.html', clothing=clothing, brand=brand )
+  return results
 
+
+@app.route ('/shirts')
+def shirts ():
+  shirts = do_query ('SELECT Name,Price,Photo FROM Shirts')
+  return render_template('shirts.html', shirts=shirts )
+
+
+@app.route ('/shirts/<int:id>')
+def singleshirt (id):
+  conn = sqlite3.connect("clothing2.db")
+  cursor = conn.cursor()
+  cursor.execute("SELECT * FROM Shirts WHERE id=?;", (id,))
+  singleshirt = cursor.fetchone()
+  conn.close()
+  print(singleshirt)
+  return render_template('singleshirt.html', singleshirt=singleshirt )
 
 @app.route('/about')
 def about():

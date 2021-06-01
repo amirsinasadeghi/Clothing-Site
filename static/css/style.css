@@ -5,17 +5,17 @@ h2{
   background-color: black;
   color: white;
 }
-li {
+a {
   float: left;
   display:block;
+  padding: 8px;
+  background-color: black;
+  color: white;
 	width:120px;
 	margin-left:2px;
 	border:1px solid #000;
 }
-
-a {
-  display: block;
-  padding: 8px;
-  background-color: black;
-  color: white;
+a:hover {
+  background-color: white;
+  color: black
 }
