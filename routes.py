@@ -4,13 +4,13 @@ import sqlite3
 
 app = Flask(__name__)
 
-
+# this is the route for my home page.
 @app.route('/')
 def home ():
   return render_template('home.html', title="home")
 
-
-def do_query (query):
+#this simplifies any query that im doing so that I dont need to rewrite the thing out all the time.
+def do_query (query): 
   conn = sqlite3.connect("clothing2.db")
   cur = conn.cursor()
   cur.execute(query)
@@ -18,13 +18,13 @@ def do_query (query):
   conn.close()
   return results
 
-
+#This query grabs all the data from shirts and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
 @app.route ('/shirts')
 def shirts ():
   shirts = do_query ('SELECT Name,Price,Photo FROM Shirts')
   return render_template('shirts.html', shirts=shirts )
 
-
+#This grabs all the info for one specific shirt and displays it onto the screen.
 @app.route ('/shirts/<int:id>')
 def singleshirt (id):
   conn = sqlite3.connect("clothing2.db")

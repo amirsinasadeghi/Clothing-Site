@@ -5,17 +5,29 @@ h2{
   background-color: black;
   color: white;
 }
-a {
-  float: left;
-  display:block;
-  padding: 8px;
+/* The code below is for the navbar  */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
   background-color: black;
+}
+li {
+  float: left;
+}
+
+li a {
+  list-style-type: none;
+  display: block;
   color: white;
-	width:120px;
-	margin-left:2px;
-	border:1px solid #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: underline;
 }
-a:hover {
+
+li a:hover {
   background-color: white;
-  color: black
+  color: black;
 }
+/* end of navbar code */
