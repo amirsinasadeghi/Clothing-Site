@@ -10,30 +10,30 @@ def home ():
   return render_template('home.html', title="home")
 
 #this simplifies any query that im doing so that I dont need to rewrite the thing out all the time.
-def do_query (query): 
-  conn = sqlite3.connect("clothing2.db")
+def do_query (query, data=None, fetchone=False):
+  conn = sqlite3.connect("clothing.db")
   cur = conn.cursor()
-  cur.execute(query)
-  results = cur.fetchall()
+  if data is None:
+    cur.execute(query)
+  else:
+    cur.execute(query, data)
+  results = cur.fetchone() if fetchone else cur.fetchall()
   conn.close()
   return results
 
-#This query grabs all the data from shirts and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
+#This query grabs all the data from anything that classifies as a shirt and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
 @app.route ('/shirts')
 def shirts ():
-  shirts = do_query ('SELECT Name,Price,Photo FROM Shirts')
+  shirts = do_query ('SELECT id,name,price FROM Clothes where typeid=(SELECT typeid FROM Type where name = "Shirt") ;')
   return render_template('shirts.html', shirts=shirts )
 
-#This grabs all the info for one specific shirt and displays it onto the screen.
-@app.route ('/shirts/<int:id>')
-def singleshirt (id):
-  conn = sqlite3.connect("clothing2.db")
-  cursor = conn.cursor()
-  cursor.execute("SELECT * FROM Shirts WHERE id=?;", (id,))
-  singleshirt = cursor.fetchone()
-  conn.close()
-  print(singleshirt)
-  return render_template('singleshirt.html', singleshirt=singleshirt )
+#This grabs all the info for one specific clothing item and displays it onto the screen.
+@app.route ('/clothingitem/<int:id>')
+def clothingitem (id):
+  clothingitem = do_query (" SELECT * FROM Clothes WHERE id=?;", (id,), fetchone=True)
+  return render_template('clothingitem.html',clothingitem=clothingitem )
+
+
 
 @app.route('/about')
 def about():

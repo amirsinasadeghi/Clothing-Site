@@ -1,7 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<p> {{ [shirts] }}
-</p>
+{% for shirt in shirts %}
+ <p>{{shirt[1]}}
+  {{shirt[2]}}</p> 
+{% endfor %}
 
 {% endblock %}
