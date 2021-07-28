@@ -1,11 +1,12 @@
 body{
-  font-family: "verdana";
+  font-family:"Verdana"
 }
 h2{
   background-color: black;
   color: white;
 }
-/* The code below is for the navbar  */
+
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -13,12 +14,12 @@ ul {
   overflow: hidden;
   background-color: black;
 }
+
 li {
   float: left;
 }
 
 li a {
-  list-style-type: none;
   display: block;
   color: white;
   text-align: center;
@@ -30,4 +31,11 @@ li a:hover {
   background-color: white;
   color: black;
 }
-/* end of navbar code */
+
+photo {
+  display: block;
+  text-align: center;
+}
+name {
+  text-align: center;
+}

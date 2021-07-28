@@ -21,10 +21,10 @@ def do_query (query, data=None, fetchone=False):
   conn.close()
   return results
 
-#This query grabs all the data from anything that classifies as a shirt and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
+#This query grabs all the data from anything that classifies as a shirt (id of 2) and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
 @app.route ('/shirts')
 def shirts ():
-  shirts = do_query ('SELECT id,name,price FROM Clothes where typeid=(SELECT typeid FROM Type where name = "Shirt") ;')
+  shirts = do_query ('SELECT id,name,price FROM Clothes where typeid="2"')
   return render_template('shirts.html', shirts=shirts )
 
 #This grabs all the info for one specific clothing item and displays it onto the screen.

@@ -1,10 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<p> id = {{ clothingitem [0] }}</p>
-<p> name = {{ clothingitem [1] }} </p>
-<p> Price = {{ clothingitem [3] }} </p>
-<p> Describtion = {{ clothingitem [2] }}  
+
+<photo>  <img src="/static\css/images/{{clothingitem[4]}}" width="50%"> </photo>
+<name> {{ clothingitem [1] }}</name>
+<price> ${{ clothingitem [3] }}</price>
+<describtion> {{ clothingitem [2] }}</describtion>  
+<color> {% for color in color %}
+ colors = {{color [1]}}
+{% endfor %}
+</color>
 
 {% endblock %}
-

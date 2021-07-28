@@ -1,9 +1,12 @@
 {% extends 'layout.html' %}
 {% block content %}
 
+allshirts = {{ shirts }}
 {% for shirt in shirts %}
- <p>{{shirt[1]}}
-  {{shirt[2]}}</p> 
+ <p> <a href="/clothingitem/{{shirt[0]}}"> {{shirt[1]}} </a> 
+  {{shirt[2]}} 
+  <img src="/static\css/images/{{shirt[3]}}"></p>
 {% endfor %}
+
 
 {% endblock %}
