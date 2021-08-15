@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+
 {% block content %}
 
 <table style="width:100%">
@@ -9,12 +10,17 @@
   </tr>
   <tr>  
    {% for shirt in shirts %}
-     <td><a href="/clothingitem/{{shirt[0]}}"> {{shirt[1]}}</td>
+     <td><name><a href="/clothingitem/{{shirt[0]}}"> {{shirt[1]}}</name></td>
      <td> ${{shirt[2]}}</td>
      <td><img src="/static\css/images/{{shirt[3]}}"></td>
   </tr>
   {% endfor %}
 </table>
-
-
 {% endblock %}
+https://www.w3schools.com/css/tryit.asp?filename=trycss_ex_images_card
+
+
+
+
+
+

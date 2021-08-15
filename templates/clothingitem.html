@@ -3,12 +3,12 @@
 
 
 <photo>  <img src="/static\css/images/{{clothingitem[4]}}" width="50%"> </photo>
-<name> {{ clothingitem [1] }}</name>
-<price> ${{ clothingitem [3] }}</price>
-<describtion> {{ clothingitem [2] }}</describtion>  
-<color> {% for color in color %}
- colors = {{color [1]}}
+<p><name> {{ clothingitem [1] }} </name></p>
+<p> ${{ clothingitem [3] }}</p>
+<p> {{ clothingitem [2] }}</p>  
+<p>Color(s):{% for color in color %}
+ {{color[1]}}.
 {% endfor %}
-</color>
+</p>
 
 {% endblock %}

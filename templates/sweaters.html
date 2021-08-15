@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{{sweaters}}
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Photo</th>
+  </tr>
+  <tr>  
+   {% for sweaters in sweaters %}
+     <td><name><a href="/clothingitem/{{sweaters[0]}}"> {{sweaters[1]}}</name></td>
+     <td> ${{sweaters[2]}}</td>
+     <td><img src="/static\css/images/{{sweaters[3]}}"></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Photo</th>
+  </tr>
+  <tr>  
+   {% for pants in pants %}
+     <td><a href="/clothingitem/{{pants[0]}}"> {{pants[1]}}</td>
+     <td> ${{pants[2]}}</td>
+     <td><img src="/static\css/images/{{pants[3]}}"></td>
+  </tr>
+  {% endfor %}
+
+
+{% endblock %}
