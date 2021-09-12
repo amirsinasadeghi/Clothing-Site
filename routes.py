@@ -9,6 +9,7 @@ app = Flask(__name__)
 def home ():
   return render_template('home.html', title="home")
 
+#this takes you to a page which allows the user to contact the creator
 @app.route('/about')
 def about():
   return render_template('about.html', title="about") 
@@ -31,13 +32,13 @@ def shirts ():
   shirts = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="2"')
   return render_template('shirts.html', shirts=shirts )
 
-
+#this query grabs the anything from the table named pants and displays its id, price and photo
 @app.route ('/pants')
 def pants ():
   pants = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="1"')
   return render_template('pants.html', pants=pants )
 
-
+#this query does the same thing as the pants query but for anything that classifies as sweater
 @app.route ('/sweaters')
 def sweaters ():
   sweaters = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="3"')
