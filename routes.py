@@ -4,6 +4,12 @@ import sqlite3
 
 app = Flask(__name__)
 
+
+@app.errorhandler(404) 
+def invalid_route(e): 
+  return render_template('errorpage.html', title="404errorpage")
+
+
 # this is the route for my home page.
 @app.route('/')
 def home ():
@@ -13,6 +19,7 @@ def home ():
 @app.route('/about')
 def about():
   return render_template('about.html', title="about") 
+
 
 #this simplifies any query that im doing so that I dont need to rewrite the thing out all the time.
 def do_query (query, data=None, fetchone=False):
@@ -26,11 +33,13 @@ def do_query (query, data=None, fetchone=False):
   conn.close()
   return results
 
+
 #This query grabs all the data from anything that classifies as a shirt (id of 2) and displays it, after this users can select on one specific shirt name and it will take them to the link of the ID of the shirt.
 @app.route ('/shirts')
 def shirts ():
   shirts = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="2"')
   return render_template('shirts.html', shirts=shirts )
+
 
 #this query grabs the anything from the table named pants and displays its id, price and photo
 @app.route ('/pants')
@@ -38,13 +47,12 @@ def pants ():
   pants = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="1"')
   return render_template('pants.html', pants=pants )
 
+
 #this query does the same thing as the pants query but for anything that classifies as sweater
 @app.route ('/sweaters')
 def sweaters ():
   sweaters = do_query ('SELECT id,name,price,photo FROM Clothes WHERE typeid="3"')
   return render_template('sweaters.html', sweaters=sweaters )
-
-
 
 
 #This grabs all the info for one specific clothing item and displays it onto the screen.
@@ -55,8 +63,5 @@ def clothingitem (id):
   return render_template('clothingitem.html',clothingitem=clothingitem,color=color )
 
 
-
-  
-  
 if __name__ == "__main__" :
   app.run(debug=True)

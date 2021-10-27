@@ -2,20 +2,16 @@
 
 {% block content %}
 <!--The table for all shirts has been displayed-->
-<table style="width:100%">
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Photo</th>
-  </tr>
-  <tr>  
-   {% for shirt in shirts %}
-     <td><name><a href="/clothingitem/{{shirt[0]}}"> {{shirt[1]}}</name></td>
-     <td> ${{shirt[2]}}</td>
-     <td><img src="/static\css/images/{{shirt[3]}}"></td>
-  </tr>
-  {% endfor %}
-</table>
+{% for shirts in shirts %}
+<div>
+ <img src="/static\css/images/{{shirts[3]}}"  >
+</div>
+{% endfor %}
+
+<div class="text">
+  <h1>Shop New Spring Collection</h1>
+  
+</div>
 {% endblock %}
 
 
