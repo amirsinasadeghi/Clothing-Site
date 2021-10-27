@@ -2,16 +2,17 @@
 
 {% block content %}
 <!--The table for all shirts has been displayed-->
-{% for shirts in shirts %}
-<div>
- <img src="/static\css/images/{{shirts[3]}}"  >
-</div>
-{% endfor %}
 
-<div class="text">
-  <h1>Shop New Spring Collection</h1>
-  
+<div class="grid-container">
+  {% for shirts in shirts %}
+    </div class="grid-item">
+      <img src="/static\css/images/{{shirts[3]}}">
+      <text>hi</text>
+    </div>
+  {% endfor %}
 </div>
+
+
 {% endblock %}
 
 

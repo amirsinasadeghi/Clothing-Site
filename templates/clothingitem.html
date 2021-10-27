@@ -1,17 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-
 <div class = "clothing-item">
- <!-- this is the page for a singular clothing item-->
- <photo>  <img src="/static\css/images/{{clothingitem[4]}}" width="50%"> </photo>
- <p><name> {{ clothingitem [1] }} </name></p>
- <p> ${{ clothingitem [3] }}</p>
- <p> {{ clothingitem [2] }}</p>  
- <p>Color(s):{% for color in color %}
-     {{color[1]}}. 
- {% endfor %}
- </p>
+    <!-- this is the page for a singular clothing item-->
+    <photo>  <img src="/static\css/images/{{clothingitem[4]}}" width="50%"> </photo>
+    <p> <name> {{clothingitem[1]}} </name> </p>
+    <p> ${{clothingitem[3]}} </p>
+    <p> {{clothingitem[2]}} </p>
+    <p> Color(s):{% for color in color %}
+        {{color[1]}}.
+    {% endfor %}
+    </p>
 </div>
 
 

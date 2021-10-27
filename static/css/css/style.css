@@ -31,6 +31,7 @@ li a:hover {
   color: black;
 }
 
+/* This is the styling for the page where only one indivdual item is shown*/
 photo {
   display: block;
   text-align: center;
@@ -40,34 +41,30 @@ name {
   text-align: center;
 }
 
+
 /*This is the styling for the table displayed on all the pages*/
 table, th, td {
   border: 1px solid black;
   text-align: center;
 }
-img{
-  height: 500px;  
-  width: 500px;
-}
+
 
 /*this is the styling for the image on the home page and the text on it*/ 
 .bg-image {
-
   /* Add the blur effect */
   filter: blur(8px);
   -webkit-filter: blur(8px);
-
   /* Full height */
   height: 100%;
-  
-
- 
 }
+
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  /* Fallback color */
+  background-color: rgb(0,0,0);
+  /* Black w/opacity/see-through */
+  background-color: rgba(0,0,0, 0.4); 
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
@@ -83,4 +80,20 @@ img{
 
 .clothing-item {
  text-align: center;
+}
+
+img{
+  height: 500px;  
+  width: 500px;
+}
+
+
+text{
+  float: rights;
+}
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
