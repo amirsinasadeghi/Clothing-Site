@@ -64,15 +64,15 @@ def sweaters():
 # This grabs all the info for one specific clothing item and displays it onto the screen.
 @app.route('/clothingitem/<int:id>')
 def clothingitem(id):
-  int = id
-  if int > 15:
-    a = print ("fail")
-  else:
-    a = print ("success")
   clothingitem = do_query(" SELECT * FROM Clothes WHERE id=?;", (id,), fetchone=True)
-  color = do_query('SELECT * FROM Color WHERE id IN (SELECT colorid FROM ClothesColor\
-  _HERE clothesid = ?)', (id,), fetchone=False)
-
+  colors = do_query('SELECT * FROM Color WHERE id IN (SELECT colorid FROM ClothesColor\
+  WHERE clothesid=?)', (id,), fetchone=False)
+  a = (id)
+  if a > 15:
+    return render_template('errorpage.html', title="404errorpage")
+  else:
+    return render_template('clothingitem.html', clothingitem=clothingitem, colors=colors)
+  
 
 if __name__ == "__main__":
   app.run(debug=True)

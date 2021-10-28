@@ -1,11 +1,18 @@
+/*This makes up the font for the full project*/
 body{
   font-family:"Verdana"
 }
+
+/*This makes up the styling for any headings used*/
 h2{
   background-color: black;
   color: white;
 }
-/* This  is the styling for the nav bar, it allows it to change color and be underlined when hovered on*/
+
+
+/* This  is the styling for the nav bar
+this first part makes the background black and makes it so they
+appear in one row*/
 ul {
   list-style-type: none;
   margin: 0;
@@ -14,10 +21,14 @@ ul {
   background-color: black;
 }
 
+
 li {
   float: left;
 }
 
+
+/* This makes up the actual words and how they are 
+displayed in the nav bar*/
 li a {
   display: block;
   color: white;
@@ -26,22 +37,39 @@ li a {
   text-decoration: underline;
 }
 
+
 li a:hover {
   background-color: white;
   color: black;
   text-decoration: underline;
 }
 
-/* This is the styling for the page where only one indivdual item is shown*/
+
+/* This is the styling for the page where only one indivdual item is shown
+This makes the the photo be in the center of the pafe*/
 photo {
   display: block;
   text-align: center;
 }
+
+
+/*This makes the name be bold and be in the center as well*/
 name {
   font-weight: bold;
   text-align: center;
 }
 
+
+/*This causes all the words to be in the center of the page*/
+.clothing-item {
+  text-align: center;
+}
+ 
+/*resizes the images to a specific size*/
+img{
+  height: 500px;  
+  width: 500px;
+}
 
 
 /*this is the styling for the image on the home page and the text on it*/ 
@@ -56,9 +84,7 @@ name {
 
 /* Position text in the middle of the page/image */
 .bg-text {
-  /* Fallback color */
   background-color: rgb(0,0,0);
-  /* Black w/opacity/see-through */
   background-color: rgba(0,0,0, 0.4); 
   color: white;
   font-weight: bold;
@@ -73,18 +99,10 @@ name {
   text-align: center;
 }
 
-.clothing-item {
- text-align: center;
-}
 
-img{
-  height: 500px;  
-  width: 500px;
-}
-
-
-
-/* The code for all the table pages (shirts, pants, sweaters) */
+/* The code for all the table pages (shirts, pants, sweaters) 
+the flexbox is used as to adjust each container and its size so
+it fills up the whole screen*/
 .grid-container {
   display: flex;
   flex-wrap: wrap;
@@ -92,26 +110,36 @@ img{
   row-gap: 30px;
 }
 
+/*adds a border teach container*/
 .container{
   border-style: solid;
 }
 
+
+/*adds a border on top of the names and makes them allign 
+in the center*/
 .text {
   text-align: center;
   border-style: solid;
   border-width: medium 0px 0px;
 }
 
+
+/*makes tge links a solid color and when hovered on they underline*/
 name a{
   color: black;
   font-weight: bold;
   text-decoration: none;
 }
+
+
 name a:hover{
   text-decoration: underline;
 }
 
-div.error{
+
+/*Makes the content for the error page be displayed in the center*/
+.error{
   display: block;
   text-align: center;
 }
