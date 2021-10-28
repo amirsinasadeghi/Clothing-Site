@@ -69,10 +69,13 @@ def clothingitem(id):
   WHERE clothesid=?)', (id,), fetchone=False)
   a = (id)
   if a > 15:
+    print ("fail")
     return render_template('errorpage.html', title="404errorpage")
   else:
+    print("success")
     return render_template('clothingitem.html', clothingitem=clothingitem, colors=colors)
   
 
 if __name__ == "__main__":
   app.run(debug=True)
+  
