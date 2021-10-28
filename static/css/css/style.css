@@ -60,7 +60,8 @@ name {
 }
 
 
-/*This causes all the words to be in the center of the page*/
+/*This causes all the words for the clothing item page
+to be in the center of the page*/
 .clothing-item {
   text-align: center;
 }
@@ -125,7 +126,7 @@ in the center*/
 }
 
 
-/*makes tge links a solid color and when hovered on they underline*/
+/*makes the links a solid color and when hovered on they underline*/
 name a{
   color: black;
   font-weight: bold;
