@@ -1,21 +1,19 @@
 {% extends 'layout.html' %}
-
 {% block content %}
-<!--The table for all shirts has been displayed-->
 
+
+<!--The table for all shirts has been displayed-->
 <div class="grid-container">
   {% for shirts in shirts %}
-    </div class="grid-item">
-      <img src="/static\css/images/{{shirts[3]}}">
-      <text>hi</text>
+    <div class="container">
+      <img src="/static\css/images/{{shirts[3]}}" height="500px" width="500%px">
+      <div class="text">
+        <name> <a href="/clothingitem/{{shirts[0]}}"> {{shirts[1]}} </a> </name>
+        <p> ${{shirts[2]}} </p>
+      </div>
     </div>
-  {% endfor %}
+ {% endfor %}
 </div>
 
 
 {% endblock %}
-
-
-
-
-

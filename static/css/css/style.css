@@ -29,6 +29,7 @@ li a {
 li a:hover {
   background-color: white;
   color: black;
+  text-decoration: underline;
 }
 
 /* This is the styling for the page where only one indivdual item is shown*/
@@ -41,12 +42,6 @@ name {
   text-align: center;
 }
 
-
-/*This is the styling for the table displayed on all the pages*/
-table, th, td {
-  border: 1px solid black;
-  text-align: center;
-}
 
 
 /*this is the styling for the image on the home page and the text on it*/ 
@@ -88,12 +83,35 @@ img{
 }
 
 
-text{
-  float: rights;
+
+/* The code for all the table pages (shirts, pants, sweaters) */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 30px;
 }
 
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
+.container{
+  border-style: solid;
+}
+
+.text {
+  text-align: center;
+  border-style: solid;
+  border-width: medium 0px 0px;
+}
+
+name a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+name a:hover{
+  text-decoration: underline;
+}
+
+div.error{
+  display: block;
+  text-align: center;
 }
