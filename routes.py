@@ -67,8 +67,8 @@ def clothingitem(id):
   clothingitem = do_query(" SELECT * FROM Clothes WHERE id=?;", (id,), fetchone=True)
   colors = do_query('SELECT * FROM Color WHERE id IN (SELECT colorid FROM ClothesColor\
   WHERE clothesid=?)', (id,), fetchone=False)
-  a = (id)
-  if a > 15:
+  int = (id)
+  if int > 15:
     print ("fail")
     return render_template('errorpage.html', title="404errorpage")
   else:
@@ -78,4 +78,3 @@ def clothingitem(id):
 
 if __name__ == "__main__":
   app.run(debug=True)
-  
