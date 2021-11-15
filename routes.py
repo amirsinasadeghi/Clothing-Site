@@ -67,7 +67,12 @@ def clothingitem(id):
   clothingitem = do_query(" SELECT * FROM Clothes WHERE id=?;", (id,), fetchone=True)
   colors = do_query('SELECT * FROM Color WHERE id IN (SELECT colorid FROM ClothesColor\
   WHERE clothesid=?)', (id,), fetchone=False)
+  #the query above shows selects all the colors from 1 specific item of clothing.
+  #I did this because there is a table which links the colors to the items.
+  #So it selects all the "links" of the one item
   int = (id)
+  #the if statment makes limits for what data the program will work. 
+  #So it only works for the first 15 items.
   if int > 15:
     print ("fail")
     return render_template('errorpage.html', title="404errorpage")
